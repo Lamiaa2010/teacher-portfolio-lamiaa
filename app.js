@@ -1,18 +1,18 @@
 const S=window.SITE;
 const T={
  ar:{nav_about:"من أنا",nav_books:"أعمالي التفاعلية",nav_vault:"ملف إنجاز",nav_skills:"المهارات",nav_contact:"تواصل",
-  hero_tag:"// ملف إنجاز",cta_vault:"شوفي ملف إنجاز",cta_books:"الكتب التفاعلية",
+  hero_tag:"// ملف إنجاز",cta_vault:"ملف إنجاز",cta_books:"الكتب التفاعلية",
   st_books:"كتب تفاعلية",st_units:"وحدات (أولى ثانوي)",st_lessons:"درسًا (أولى ثانوي)",
   about_p:"مهندسة بالتدريب، ومعلمة حاسب آلي بالشغف. أدرّس التقنية الرقمية والروبوتات، وبطبّق عقلية الهندسة في الفصل: أفكّك الفكرة المعقدة لخطوات بسيطة، وأبني لها نموذجًا تفاعليًا تجرّبه الطالبة بنفسها، وأقيس أثر التعلّم.",
   vault_t:{all:"الكل",cert:"شهادات",course:"دورات",initiative:"مبادرات",project:"مشاريع",honor:"تكريمات"},
-  open:"فتح",view:"عرض الملف",soon:"قريبًا",mail:"راسليني",pdf:"حفظ PDF",
+  open:"فتح",view:"عرض الملف",soon:"قريبًا",mail:"راسليني",pdf:"حفظ PDF",ppt:"تحميل العرض PowerPoint ⬇",
   skills:["الروبوتات","التقنية الرقمية","تصميم محتوى تفاعلي","التفكير الهندسي","حل المشكلات","الذكاء الاصطناعي في التعليم","الفيديو التعليمي","أوراق عمل تفاعلية","التعلّم النشط"]},
  en:{nav_about:"About",nav_books:"Interactive Work",nav_vault:"Portfolio",nav_skills:"Skills",nav_contact:"Contact",
   hero_tag:"// teacher achievement portfolio",cta_vault:"View the portfolio",cta_books:"Interactive books",
   st_books:"interactive books",st_units:"units (Grade 10)",st_lessons:"lessons (Grade 10)",
   about_p:"An engineer by training and a computer teacher by passion. I teach Digital Technology and robotics and bring an engineer's mindset to class: break a complex idea into simple steps, build an interactive model students can try themselves, and measure the learning.",
   vault_t:{all:"All",cert:"Certificates",course:"Courses",initiative:"Initiatives",project:"Projects",honor:"Honors"},
-  open:"Open",view:"View file",soon:"Coming soon",mail:"Email me",pdf:"Save as PDF",
+  open:"Open",view:"View file",soon:"Coming soon",mail:"Email me",pdf:"Save as PDF",ppt:"Download PowerPoint ⬇",
   skills:["Teaching robotics","Teaching Digital Technology","Interactive content design","Engineering thinking","Problem solving","AI in education","Educational video","Interactive worksheets","Active learning"]}
 };
 let lang=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||'ar',filter='all';
@@ -20,7 +20,7 @@ const $=s=>document.querySelector(s);
 const STD_NAME=k=>({plan:'إعداد وتنفيذ خطة التعلم',results:'تحليل نتائج المتعلمين',assess:'تنوع أساليب التقويم'}[k]||(S.standards.find(s=>String(s.n)===String(k))||{}).ar||'');
 const DLINK=k=>S.folders&&S.folders[k]?`<a class="dl" href="https://drive.google.com/drive/folders/${S.folders[k]}" target="_blank" rel="noopener">فتح المجلد ↗</a>`:'';
 function vaultFilters(){const ks=['all',...S.standards.map(s=>String(s.n)),'plan','results','assess'];return ks.map(k=>`<button type="button" data-f="${k}" class="${k===filter?'on':''}">${k==='all'?'الكل':(/^\d$/.test(k)?k+'. ':'')+STD_NAME(k)}</button>`).join('')}
-function vaultCards(){let its=S.items.filter(i=>!i.term2&&(filter==='all'||String(i.std)===filter));let h=its.map(i=>card(i,'ar')).join('');if(filter!=='all'&&!its.length)h=`<article class="card reveal in ph"><div class="meta"><span>${STD_NAME(filter)}</span><span class="badge">قريبًا</span></div><h3>شواهد ${STD_NAME(filter)}</h3><p>هنا هتظهر شواهدك. ابعتي الصورة أو الـ PDF وأنا أضيفها.</p>${DLINK(filter)}</article>`;return h}
+function vaultCards(){let its=S.items.filter(i=>(filter==='all'||String(i.std)===filter||(i.term2&&filter==='8')));let h=its.map(i=>card(i,'ar')).join('');if(filter!=='all'&&!its.length)h=`<article class="card reveal in ph"><div class="meta"><span>${STD_NAME(filter)}</span><span class="badge">قريبًا</span></div><h3>شواهد ${STD_NAME(filter)}</h3><p>هنا هتظهر شواهدك. ابعتي الصورة أو الـ PDF وأنا أضيفها.</p>${DLINK(filter)}</article>`;return h}
 function buildRing(){const r=document.getElementById('ring');const n=S.standards.length;r.innerHTML=S.standards.map((s,i)=>{const cnt=S.items.filter(x=>String(x.std)===String(s.n)).length;return `<div class="rp" data-std="${s.n}" style="--i:${i}"><b>${s.n}</b><span>${s.ar}</span><small>${cnt?cnt+' شاهد':'قريبًا'}</small>${DLINK(s.n)}</div>`}).join('');
  document.getElementById('triple').innerHTML=[['plan','إعداد وتنفيذ خطة التعلم','بعض الشواهد'],['results','تحليل نتائج المتعلمين','للمزيد'],['assess','تنوع أساليب التقويم','صفية ولاصفية: الاختبارات (ورقي وإلكتروني) · التطبيق العملي · المهام الأدائية · المشاريع']].map(([k,t,s])=>`<div class="t3" data-std="${k}"><h4>${t}</h4><p>${s}</p>${DLINK(k)}</div>`).join('')}
 function card(it,L){
