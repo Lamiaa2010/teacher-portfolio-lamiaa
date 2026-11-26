@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lamiaa Tawfeek | Engineer & Computer Teacher</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="3d.css">
+</head>
+<body>
+<div id="glow"></div>
+<header class="nav">
+  <a class="logo" href="#top">LT<span>_</span></a>
+  <nav>
+    <a href="#about" data-i="nav_about"></a>
+    <a href="#books" data-i="nav_books"></a>
+    <a href="#vault" data-i="nav_vault"></a>
+    <a href="#skills" data-i="nav_skills"></a>
+    <a href="#contact" data-i="nav_contact"></a>
+  </nav>
+  <button id="pdf" type="button"></button>
+  <button id="lang" type="button" aria-label="language">EN</button>
+</header>
+
+<main id="top">
+<section class="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="hero-in">
+    <div class="hero-txt">
+      <div class="schoolbadge" title="مدارس الزهراء الأهلية"><img id="schoolLogo" src="school-logo.png" alt="شعار المدرسة"></div>
+      <p class="mono tag" data-i="hero_tag"></p>
+      <h1 id="name"></h1>
+      <p class="role" id="role"></p>
+      <p class="code mono" id="typed" aria-hidden="true"></p>
+      <p class="tagline" id="tagline"></p>
+      <div class="cta">
+        <a class="btn" href="#vault" data-i="cta_vault"></a>
+        <a class="btn ghost" href="#books" data-i="cta_books"></a>
+      </div>
+    </div>
+    <div class="scene" aria-hidden="true">
+      <svg class="robot" viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="bd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#bcd9ff"/></linearGradient>
+<linearGradient id="vz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a3fc0"/><stop offset="1" stop-color="#041a4d"/></linearGradient></defs>
+<ellipse cx="150" cy="326" rx="80" ry="9" fill="#02102f" opacity=".35"/>
+<g class="bob">
+<line x1="150" y1="24" x2="150" y2="56" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+<circle class="ant" cx="150" cy="20" r="11" fill="#5ab0ff"/>
+<rect x="72" y="54" width="156" height="118" rx="38" fill="url(#bd)" stroke="#fff" stroke-width="3"/>
+<rect x="88" y="72" width="124" height="80" rx="26" fill="url(#vz)"/>
+<g class="eyes"><ellipse cx="124" cy="110" rx="14" ry="17" fill="#8fd0ff"/><ellipse cx="176" cy="110" rx="14" ry="17" fill="#8fd0ff"/></g>
+<path d="M130 136 Q150 150 170 136" stroke="#8fd0ff" stroke-width="5" fill="none" stroke-linecap="round"/>
+<rect x="58" y="96" width="14" height="40" rx="7" fill="#5ab0ff"/><rect x="228" y="96" width="14" height="40" rx="7" fill="#5ab0ff"/>
+<rect x="124" y="172" width="52" height="16" rx="6" fill="#5ab0ff"/>
+<rect x="84" y="186" width="132" height="110" rx="30" fill="url(#bd)" stroke="#fff" stroke-width="3"/>
+<rect x="112" y="208" width="76" height="46" rx="12" fill="url(#vz)"/>
+<text x="150" y="240" text-anchor="middle" font-family="JetBrains Mono,monospace" font-weight="700" font-size="22" fill="#8fd0ff">&lt;/&gt;</text>
+<circle cx="104" cy="272" r="6" fill="#0a4fe0"/><circle cx="196" cy="272" r="6" fill="#0a4fe0"/>
+<g class="armL"><rect x="36" y="196" width="48" height="20" rx="10" fill="url(#bd)" stroke="#fff" stroke-width="3"/><circle cx="34" cy="206" r="14" fill="#5ab0ff"/></g>
+<g class="armR"><rect x="216" y="196" width="48" height="20" rx="10" fill="url(#bd)" stroke="#fff" stroke-width="3"/><circle cx="266" cy="206" r="14" fill="#5ab0ff"/></g>
+<rect x="104" y="296" width="30" height="26" rx="10" fill="#5ab0ff"/><rect x="166" y="296" width="30" height="26" rx="10" fill="#5ab0ff"/>
+</g></svg>
+      <div class="cu c1"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="cu c2"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="cu c3"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="orbit o1"></div><div class="orbit o2"></div>
+    </div>
+  </div>
+  <div class="stats">
+    <div><b data-count="2">0</b><span data-i="st_books"></span></div>
+    <div><b data-count="4">0</b><span data-i="st_units"></span></div>
+    <div><b data-count="17">0</b><span data-i="st_lessons"></span></div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="mq" id="mq"></div></div>
+
+<section id="about" class="sec">
+  <h2><i>01</i><span data-i="nav_about"></span></h2>
+  <div class="about-row"><div class="minis"><svg class="mini" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><line x1="60" y1="8" x2="60" y2="24" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="60" cy="8" r="6" fill="#5ab0ff"/><rect x="14" y="24" width="92" height="76" rx="24" fill="#fff" stroke="currentColor" stroke-width="4"/><rect x="24" y="36" width="72" height="44" rx="14" fill="#0a3fc0"/><circle cx="46" cy="58" r="8" fill="#8fd0ff"/><circle cx="74" cy="58" r="8" fill="#8fd0ff"/><path d="M48 90 Q60 98 72 90" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/></svg><svg class="mini" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><line x1="60" y1="8" x2="60" y2="24" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="60" cy="8" r="6" fill="#5ab0ff"/><rect x="14" y="24" width="92" height="76" rx="24" fill="#fff" stroke="currentColor" stroke-width="4"/><rect x="24" y="36" width="72" height="44" rx="14" fill="#0a3fc0"/><circle cx="46" cy="58" r="8" fill="#8fd0ff"/><circle cx="74" cy="58" r="8" fill="#8fd0ff"/><path d="M48 90 Q60 98 72 90" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/></svg><svg class="mini" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><line x1="60" y1="8" x2="60" y2="24" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="60" cy="8" r="6" fill="#5ab0ff"/><rect x="14" y="24" width="92" height="76" rx="24" fill="#fff" stroke="currentColor" stroke-width="4"/><rect x="24" y="36" width="72" height="44" rx="14" fill="#0a3fc0"/><circle cx="46" cy="58" r="8" fill="#8fd0ff"/><circle cx="74" cy="58" r="8" fill="#8fd0ff"/><path d="M48 90 Q60 98 72 90" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/></svg></div><p class="lead" data-i="about_p"></p></div>
+  <div class="flip" id="flip" tabindex="0" role="button">
+    <div class="side eng">
+      <small class="mono">ENGINEER</small>
+      <ol id="engSteps"></ol>
+    </div>
+    <div class="side tch">
+      <small class="mono">TEACHER</small>
+      <ol id="tchSteps"></ol>
+    </div>
+    <div class="hint mono" id="flipHint"></div>
+  </div>
+</section>
+
+<section id="books" class="sec blue">
+  <h2><i>02</i><span data-i="nav_books"></span></h2>
+  <div class="grid big" id="bookGrid"></div>
+</section>
+
+<section id="vault" class="sec dark3d" dir="rtl" lang="ar">
+  <h2><i>03</i><span>ملف الإنجاز</span></h2>
+  <div class="intro3d">
+    <div class="vcard"><h3>المقدمة</h3><p>يهدف هذا السجل إلى توثيق إنجازاتي كمعلمة وشواهد أدائي الوظيفي، بما يعكس جهودي في العملية التعليمية والتربوية، ويساعد في تطوير مهاراتي وتعزيز كفاءتي، وفق معايير مهنية تسهم في الارتقاء بالمستوى التعليمي.</p></div>
+    <div class="vcard"><h3>الرؤية</h3><p>تعليم متميز عالي الجودة بكوادر تعليمية لبناء مواطن معتز بقيمه الوطنية ومنافس عالميا.</p></div>
+    <div class="vcard"><h3>الرسالة</h3><p>نشأة تعليمية متميزة ترتكز على مبدأ الابتكار والإبداع والتميز في كافة أنماط التعليم.</p></div>
+    <div class="vcard"><h3>القيم</h3><p>المواطنة - المسؤولية - الإبداع - التحفيز - الإتقان</p></div>
+  </div>
+  <h3 class="sub">توثّق شواهد الأداء الوظيفي</h3>
+  <div class="ringwrap" id="ringwrap"><div class="ring" id="ring"></div></div>
+  <p class="ringhint">اسحبي لتدوير المعايير، واضغطي على معيار لعرض شواهده</p>
+  <div class="triple" id="triple"></div>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="vaultGrid"></div>
+</section>
+
+<section id="skills" class="sec ice">
+  <h2><i>04</i><span data-i="nav_skills"></span></h2>
+  <div class="chips" id="chips"></div>
+</section>
+
+<section id="contact" class="sec blue">
+  <h2><i>05</i><span data-i="nav_contact"></span></h2>
+  <div class="term" id="term">
+    <div class="bar"><u></u><u></u><u></u><span class="mono">lamiaa@portfolio ~ </span></div>
+    <div class="out mono" id="tout"></div>
+    <div class="cmds" id="tcmds"></div>
+  </div>
+  <a class="btn big white" id="mail" href="#"></a>
+</section>
+</main>
+<footer><img class="flogo" src="school-logo.png" alt="شعار المدرسة"><div class="sign" dir="rtl" lang="ar"><div><small>مديرة المدرسة</small><b>رحاب الزهراني</b></div><div><small>وكيلة الشؤون التعليمية والمدرسية</small><b>وداد الغامدي</b></div></div><span class="mono">© 2026 <span id="fname"></span></span></footer>
+
+<div id="lightbox" hidden><button type="button" id="lbx">×</button><div id="lbbody"></div></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="3d.js"></script>
+<script src="robot3d.js"></script>
+</body>
+</html>

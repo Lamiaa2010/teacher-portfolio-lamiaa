@@ -1,0 +1,80 @@
+/* strong 3D motion layer */
+html{perspective:none}
+main{perspective:1400px;perspective-origin:50% 30%;overflow-x:clip}
+main section.sec{transform-style:flat;position:relative;will-change:transform;transform-origin:50% 0}
+.reveal{transform:perspective(900px) translateY(60px) translateZ(-260px) rotateX(-55deg) rotateY(var(--ry,18deg));transform-origin:50% 100%;transition:opacity .9s,transform 1s cubic-bezier(.2,.9,.2,1)}
+.reveal.in{transform:perspective(900px) none}
+.fl3{position:absolute;pointer-events:none;transform-style:preserve-3d;z-index:0;will-change:transform}
+.cube3{width:var(--s,90px);height:var(--s,90px);position:relative;transform-style:preserve-3d;animation:spin3 var(--d,14s) linear infinite}
+.cube3 i{position:absolute;inset:0;border:2px solid #fff;background:rgba(10,80,255,.28);box-shadow:inset 0 0 22px rgba(255,255,255,.35),0 0 18px rgba(10,80,255,.5);display:grid;place-items:center;font:700 calc(var(--s,90px)/4) 'JetBrains Mono',monospace;color:#fff;font-style:normal}
+.cube3 i:nth-child(1){transform:translateZ(calc(var(--s,90px)/2))}
+.cube3 i:nth-child(2){transform:rotateY(90deg) translateZ(calc(var(--s,90px)/2))}
+.cube3 i:nth-child(3){transform:rotateY(180deg) translateZ(calc(var(--s,90px)/2))}
+.cube3 i:nth-child(4){transform:rotateY(-90deg) translateZ(calc(var(--s,90px)/2))}
+.cube3 i:nth-child(5){transform:rotateX(90deg) translateZ(calc(var(--s,90px)/2))}
+.cube3 i:nth-child(6){transform:rotateX(-90deg) translateZ(calc(var(--s,90px)/2))}
+.cube3.k i{background:rgba(0,0,0,.65);border-color:#4d9bff}
+@keyframes spin3{from{transform:rotateX(-20deg) rotateY(0)}to{transform:rotateX(340deg) rotateY(360deg)}}
+.ring3{width:var(--s,220px);height:var(--s,220px);border:6px solid rgba(255,255,255,.85);border-radius:50%;box-shadow:0 0 24px rgba(10,80,255,.7),inset 0 0 24px rgba(10,80,255,.5);animation:ring3 var(--d,9s) linear infinite}
+.ring3.k{border-color:#0a50ff}
+@keyframes ring3{from{transform:rotateX(70deg) rotateZ(0)}to{transform:rotateX(70deg) rotateZ(360deg)}}
+.gear3{width:var(--s,150px);height:var(--s,150px);border-radius:50%;border:14px dashed #0a50ff;animation:gear3 var(--d,12s) linear infinite;box-shadow:0 0 0 6px rgba(255,255,255,.7)}
+@keyframes gear3{from{transform:rotateY(55deg) rotateZ(0)}to{transform:rotateY(55deg) rotateZ(360deg)}}
+.tiltall{transform-style:preserve-3d}
+.card,.flip3d{transform-style:preserve-3d}
+.card h3,.card .meta{transform:translateZ(30px)}
+.card p{transform:translateZ(14px)}
+.sec h2{transform-style:preserve-3d;text-shadow:1px 1px 0 #0a50ff,2px 2px 0 #0a50ff,3px 3px 0 #083ec0,4px 4px 0 #083ec0,5px 5px 10px rgba(0,0,0,.4)}
+#progress3d{position:fixed;left:18px;bottom:18px;z-index:50;perspective:500px;pointer-events:none}
+#progress3d .cube3{--s:44px;animation:none}
+.marq,#mq{transform:perspective(700px) rotateX(18deg)}
+.ringwrap,#ringwrap{perspective:1000px}
+@media(max-width:700px){.fl3{opacity:.55}#progress3d{display:none}}
+@media print{.fl3,#progress3d{display:none!important}main{perspective:none}main section.sec{transform:none!important}.reveal{transform:none!important}.sec h2{text-shadow:none}.card h3,.card .meta,.card p{transform:none}}
+.card.in{transform:perspective(900px) rotateX(var(--sx,0deg)) translateZ(var(--sz,0px))}
+.card.in:hover{transform:perspective(900px) rotateX(0) translateZ(40px) scale(1.03)}
+.hero-txt{transform-style:preserve-3d}
+main section.sec>*:not(.fl3){position:relative;z-index:1}
+.fl3{opacity:.9}
+.fl3{z-index:0!important}
+@media(max-width:700px){.fl3{opacity:.3}}
+/* decorations live only in the side margins */
+.fl3:nth-of-type(odd){left:-30px!important;right:auto!important}
+.fl3:nth-of-type(even){right:-30px!important;left:auto!important}
+.fl3 .cube3{--s:72px!important}.fl3 .ring3{--s:170px!important}.fl3 .gear3{--s:90px!important}
+@media(max-width:1250px){.fl3{display:none!important}}
+.schoolbadge{background:none!important;box-shadow:none!important;padding:0!important;border-radius:0!important}
+.schoolbadge img{height:130px!important;filter:drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255,255,255,.75)) drop-shadow(0 8px 14px rgba(0,0,0,.4));animation:logofl 5s ease-in-out infinite}
+@keyframes logofl{50%{transform:translateY(-8px) rotateY(10deg)}}
+.flogo{background:none!important;padding:0!important;border-radius:0!important;height:120px!important;filter:drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255,255,255,.7))}
+@media(max-width:700px){.schoolbadge img{height:100px!important}}
+@media print{.schoolbadge img,.flogo{filter:none!important;animation:none}}
+.schoolbadge{padding:8px!important}
+.schoolbadge img{height:150px!important;filter:drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 1px #fff)!important}
+.flogo{height:130px!important;filter:drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 1.5px #fff)!important}
+@media(max-width:700px){.schoolbadge img{height:120px!important}}
+#bookGrid{grid-template-columns:repeat(2,1fr)!important}@media(max-width:700px){#bookGrid{grid-template-columns:1fr!important}}
+.robot3d{position:relative;z-index:2;width:100%;height:100%;display:block;pointer-events:none}
+.scene{min-height:340px}
+@media(max-width:820px){.scene{min-height:230px;height:260px;transform:none;margin:0}}
+/* animated blue effects on black areas */
+.sec.ice,.dark3d,footer,.hero{position:relative;overflow:hidden;isolation:isolate}
+.sec.ice>*,.dark3d>*,footer>*{position:relative;z-index:1}
+.sec.ice::before,.dark3d::before,footer::before,.hero::before{content:"";position:absolute;inset:-20%;z-index:0;pointer-events:none;
+background:
+radial-gradient(500px 300px at 20% 30%,#1a6bffaa,transparent 70%),
+radial-gradient(600px 340px at 80% 70%,#0a8cffaa,transparent 70%),
+radial-gradient(420px 260px at 55% 10%,#3d5cff88,transparent 70%),radial-gradient(520px 320px at 5% 60%,#1a6bffcc,transparent 70%),radial-gradient(480px 300px at 40% 90%,#0a8cff99,transparent 70%);
+filter:blur(30px);animation:aur 11s ease-in-out infinite alternate;opacity:1}
+.sec.ice::after,.dark3d::after,footer::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+background:repeating-linear-gradient(115deg,transparent 0 90px,#5ab0ff22 92px,#5ab0ff55 94px,transparent 96px 200px);
+background-size:400px 100%;animation:flow 9s linear infinite;mask-image:linear-gradient(transparent,#000 30%,#000 70%,transparent);-webkit-mask-image:linear-gradient(transparent,#000 30%,#000 70%,transparent)}
+.hero::before{opacity:.75;z-index:0}
+.hero>*{position:relative;z-index:1}
+.hero>.net,.hero>canvas{position:absolute}
+@keyframes aur{0%{transform:translate3d(-6%,-4%,0) scale(1) rotate(0)}50%{transform:translate3d(5%,6%,0) scale(1.15) rotate(6deg)}100%{transform:translate3d(8%,-5%,0) scale(1.05) rotate(-5deg)}}
+@keyframes flow{to{background-position:400px 0}}
+.term{background:linear-gradient(120deg,#000,#04163f,#000);background-size:300% 300%;animation:tg 10s ease-in-out infinite alternate}
+@keyframes tg{to{background-position:100% 50%}}
+.nav{background:linear-gradient(90deg,#000c,#0a2a7acc,#000c);background-size:200% 100%;animation:tg 8s ease-in-out infinite alternate}
+@media(prefers-reduced-motion:reduce){.sec.ice::before,.dark3d::before,footer::before,.hero::before,.sec.ice::after,.dark3d::after,footer::after,.term,.nav{animation:none}}
