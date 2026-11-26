@@ -258,3 +258,6 @@ html[lang=en] .nav .tick span{font-size:10.5px}
 .nav #pdf,.nav #lang{height:24px;padding:0 8px;font-size:11px}
 .nav{padding-top:6px;padding-bottom:6px}
 @media(max-width:560px){.nav{padding:6px 10px;column-gap:6px;row-gap:4px}.nav .tick{height:24px}.nav .tick span{font-size:12px}html[lang=en] .nav .tick span{font-size:10.5px}.nav .hlogo,.nav .hlogo img{height:26px}.nav #pdf,.nav #lang{height:24px;padding:0 8px;font-size:11px}.nav nav a{font-size:12.5px}.hero{padding-top:100px}}
+/* ticker moves left to right */
+.nav .tick span{animation-direction:reverse,normal}
+html[lang=en] .nav .tick span{animation-direction:normal,normal}
