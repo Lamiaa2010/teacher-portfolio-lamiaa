@@ -177,3 +177,32 @@ background-size:400px 100%;animation:flow 9s linear infinite;mask-image:linear-g
 #vaultGrid .card .open{padding:4px 14px;font-size:13px;margin-top:8px}
 @media(max-width:820px){#vaultGrid{grid-template-columns:repeat(2,minmax(0,1fr))}#vaultGrid .card{padding:12px 10px 14px}#vaultGrid .card h3{font-size:14.5px}#vaultGrid .card p{font-size:12px}#vaultGrid .card .open{font-size:12.5px;padding:4px 12px}}
 @media print{.dlppt{display:none!important}}
+
+/* evidence heading */
+.evhead{margin:48px auto 6px;text-align:center;position:relative;padding:22px 12px 18px}
+.evhead::before{content:"";position:absolute;inset:0;border-radius:26px;background:linear-gradient(135deg,rgba(0,80,255,.28),rgba(0,0,0,.55) 55%,rgba(0,120,255,.22));border:1.5px solid rgba(90,170,255,.55);box-shadow:0 0 38px rgba(0,110,255,.35),inset 0 0 30px rgba(0,110,255,.18);z-index:0}
+.evhead::after{content:"";position:absolute;inset:0;border-radius:26px;background:linear-gradient(110deg,transparent 35%,rgba(120,190,255,.28) 50%,transparent 65%);background-size:250% 100%;animation:evsweep 4s linear infinite;z-index:0;pointer-events:none}
+@keyframes evsweep{from{background-position:150% 0}to{background-position:-100% 0}}
+.evhead>*{position:relative;z-index:1}
+.evtag{display:inline-block;font-size:13px;letter-spacing:1px;color:#fff;background:#0a4dff;padding:4px 16px;border-radius:99px;box-shadow:0 0 18px rgba(30,120,255,.8);font-weight:700}
+.dark3d .evhead .evtitle{margin:12px 0 4px;font-size:clamp(30px,8.5vw,52px);line-height:1.35;font-weight:900}
+.evtxt{background:linear-gradient(90deg,#fff,#7cc0ff,#fff);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:evtxt 5s ease-in-out infinite alternate;filter:drop-shadow(0 0 14px rgba(40,130,255,.85))}
+@keyframes evtxt{to{background-position:100% 0}}
+.evline{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px}
+.evline i{display:block;height:3px;width:28%;max-width:150px;border-radius:3px;background:linear-gradient(90deg,transparent,#2f8cff)}
+.evline i:last-child{transform:scaleX(-1)}
+.evline b{width:14px;height:14px;border-radius:3px;background:#fff;transform:rotate(45deg);box-shadow:0 0 16px 3px #2f8cff;animation:evpulse 1.8s ease-in-out infinite}
+@keyframes evpulse{50%{box-shadow:0 0 26px 8px #2f8cff;transform:rotate(225deg) scale(1.15)}}
+@media(max-width:560px){.evhead{margin:36px 4px 6px}}
+@media print{.evhead::after{display:none}}
+
+/* book titles + header buttons */
+.bn{display:inline-block;direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.gr{white-space:nowrap}
+#vaultGrid .card h3{text-wrap:balance}
+.nav #pdf,.nav #lang{box-sizing:border-box;min-width:62px;height:40px;padding:0 12px;font-size:14px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;line-height:1}
+.nav #pdf{border:2px solid #fff}
+@media(max-width:560px){.nav #pdf,.nav #lang{min-width:58px;height:38px;padding:0 10px;font-size:13px}}
+/* no logo: centered header buttons */
+@media(max-width:560px){.nav{justify-content:center;column-gap:10px}.nav #pdf{order:1}.nav #lang{order:2}}
+.bn{display:inline-flex!important;direction:ltr}.bn i{font-style:normal}

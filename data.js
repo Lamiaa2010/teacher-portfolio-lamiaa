@@ -25,21 +25,21 @@ window.SITE = {
   // std: رقم المعيار (1-8) أو plan / results / assess
   items: [
     { id: 1, std: "8", date: "2026-11",
-      title: { ar: "كتاب التقنية الرقمية ١-١ التفاعلي (أولى ثانوي)", en: "Interactive Digital Technology 1-1 (Grade 10)" },
+      title: { ar: "التقنية الرقمية <span class='bn'><i>١</i><i>-</i><i>١</i></span> <span class='gr'>(أولى ثانوي)</span>", en: "Interactive Digital Technology 1-1 (Grade 10)" },
       desc: { ar: "كتاب تفاعلي لمنهج أولى ثانوي، بنفس أسلوب التفاعل والفيديو وأوراق العمل.",
               en: "An interactive book for the Grade 10 course, with the same animation, video and worksheets." },
       link: "https://lamiaa2010.github.io/alzahraa-digital-tech-g10/", book: true },
     { id: 2, std: "8", date: "2026-11",
-      title: { ar: "كتاب التقنية الرقمية ٣ التفاعلي (ثالث ثانوي)", en: "Interactive Digital Technology 3 (Grade 12)" },
+      title: { ar: "التقنية الرقمية <span class='bn'><i>٣</i></span> <span class='gr'>(ثالث ثانوي)</span>", en: "Interactive Digital Technology 3 (Grade 12)" },
       desc: { ar: "كتاب تفاعلي لمنهج ثالث ثانوي، بنفس أسلوب التفاعل والفيديو وأوراق العمل.",
               en: "An interactive book for the Grade 12 course, with the same animation, video and worksheets." },
       link: "https://lamiaa2010.github.io/alzahraa-digital-tech-g10/".replace("g10","g12"), book: true },
     { id: 3, std: "t2", term2: true, placeholder: true, book: true,
-      title: { ar: "كتاب التقنية الرقمية <span dir='ltr'>١-٢</span> التفاعلي (أولى ثانوي)", en: "Interactive Digital Technology 1-2 (Grade 10)" },
+      title: { ar: "التقنية الرقمية <span class='bn'><i>١</i><i>-</i><i>٢</i></span> <span class='gr'>(أولى ثانوي)</span>", en: "Interactive Digital Technology 1-2 (Grade 10)" },
       desc: { ar: "كتاب تفاعلي لمنهج أولى ثانوي، بنفس أسلوب التفاعل والفيديو وأوراق العمل.",
               en: "An interactive book for the Grade 10 course, with the same animation, video and worksheets." } },
     { id: 4, std: "t2", term2: true, placeholder: true, book: true,
-      title: { ar: "كتاب التقنية الرقمية <span dir='ltr'>٢-٢</span> التفاعلي (ثانية ثانوي)", en: "Interactive Digital Technology 2-2 (Grade 11)" },
+      title: { ar: "التقنية الرقمية <span class='bn'><i>٢</i><i>-</i><i>٢</i></span> <span class='gr'>(ثانية ثانوي)</span>", en: "Interactive Digital Technology 2-2 (Grade 11)" },
       desc: { ar: "كتاب تفاعلي لمنهج ثانية ثانوي، بنفس أسلوب التفاعل والفيديو وأوراق العمل.",
               en: "An interactive book for the Grade 11 course, with the same animation, video and worksheets." } }
   ]
