@@ -10,7 +10,7 @@ window.SITE = {
     en: "An engineer's mind, a teacher's heart: turning technology into living learning for her students."
   },
   contact: { email: "mrs.lamiatawfeek@gmail.com" },
-  // معايير ملف الإنجاز (من هيكل الملف الذي أرسلته لمياء)
+  // معايير ملف إنجاز (من هيكل الملف الذي أرسلته لمياء)
   // مجلدات Drive الموجودة لكل معيار (مشاركة بالرابط - للقراءة). 5 و assess غير موجودين بنفس الاسم.
   folders: {
     "1":"12Drpcyg0cHIdvybaDaO4mbk6KBmnZ69-","2":"1GqnDkOVCRq6eOIYlbz20xWi1vbpS6MtA","3":"1h5RK07PezgRKQxnctRQvvOqxLcv-NpPX",
@@ -26,19 +26,21 @@ window.SITE = {
   items: [
     { id: 1, std: "8", date: "2026-11",
       title: { ar: "كتاب التقنية الرقمية ١-١ التفاعلي (أولى ثانوي)", en: "Interactive Digital Technology 1-1 (Grade 10)" },
-      desc: { ar: "كتاب تفاعلي لمنهج أولى ثانوي يتضمن ١٧ درسًا في ٤ وحدات، بنفس أسلوب التفاعل والفيديو وأوراق العمل.",
-              en: "An interactive book for the Grade 10 course, with 17 lessons in 4 units, and the same animation, video and worksheets." },
+      desc: { ar: "كتاب تفاعلي لمنهج أولى ثانوي، بنفس أسلوب التفاعل والفيديو وأوراق العمل.",
+              en: "An interactive book for the Grade 10 course, with the same animation, video and worksheets." },
       link: "https://lamiaa2010.github.io/alzahraa-digital-tech-g10/", book: true },
     { id: 2, std: "8", date: "2026-11",
       title: { ar: "كتاب التقنية الرقمية ٣ التفاعلي (ثالث ثانوي)", en: "Interactive Digital Technology 3 (Grade 12)" },
-      desc: { ar: "كتاب تفاعلي لمنهج ثالث ثانوي يتضمن قسم الذكاء الاصطناعي، بنفس أسلوب التفاعل والفيديو وأوراق العمل.",
-              en: "An interactive book for the Grade 12 course, including the AI section, with the same animation, video and worksheets." },
+      desc: { ar: "كتاب تفاعلي لمنهج ثالث ثانوي، بنفس أسلوب التفاعل والفيديو وأوراق العمل.",
+              en: "An interactive book for the Grade 12 course, with the same animation, video and worksheets." },
       link: "https://lamiaa2010.github.io/alzahraa-digital-tech-g10/".replace("g10","g12"), book: true },
     { id: 3, std: "t2", term2: true, placeholder: true, book: true,
       title: { ar: "كتاب التقنية الرقمية <span dir='ltr'>١-٢</span> التفاعلي (أولى ثانوي)", en: "Interactive Digital Technology 1-2 (Grade 10)" },
-      desc: { ar: "كتاب تفاعلي لمنهج أولى ثانوي للفصل الدراسي الثاني، بنفس أسلوب التفاعل والفيديو وأوراق العمل. قريبًا بإذن الله.", en: "An interactive book for the Grade 10 course, second term, with the same animation, video and worksheets. Coming soon." } },
+      desc: { ar: "كتاب تفاعلي لمنهج أولى ثانوي، بنفس أسلوب التفاعل والفيديو وأوراق العمل.",
+              en: "An interactive book for the Grade 10 course, with the same animation, video and worksheets." } },
     { id: 4, std: "t2", term2: true, placeholder: true, book: true,
       title: { ar: "كتاب التقنية الرقمية <span dir='ltr'>٢-٢</span> التفاعلي (ثانية ثانوي)", en: "Interactive Digital Technology 2-2 (Grade 11)" },
-      desc: { ar: "كتاب تفاعلي لمنهج ثانية ثانوي للفصل الدراسي الثاني، بنفس أسلوب التفاعل والفيديو وأوراق العمل. قريبًا بإذن الله.", en: "An interactive book for the Grade 11 course, second term, with the same animation, video and worksheets. Coming soon." } }
+      desc: { ar: "كتاب تفاعلي لمنهج ثانية ثانوي، بنفس أسلوب التفاعل والفيديو وأوراق العمل.",
+              en: "An interactive book for the Grade 11 course, with the same animation, video and worksheets." } }
   ]
 };

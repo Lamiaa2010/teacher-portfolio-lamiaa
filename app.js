@@ -1,7 +1,7 @@
 const S=window.SITE;
 const T={
- ar:{nav_about:"من أنا",nav_books:"أعمالي التفاعلية",nav_vault:"ملف الإنجاز",nav_skills:"المهارات",nav_contact:"تواصل",
-  hero_tag:"// ملف إنجاز",cta_vault:"شوفي ملف الإنجاز",cta_books:"الكتب التفاعلية",
+ ar:{nav_about:"من أنا",nav_books:"أعمالي التفاعلية",nav_vault:"ملف إنجاز",nav_skills:"المهارات",nav_contact:"تواصل",
+  hero_tag:"// ملف إنجاز",cta_vault:"شوفي ملف إنجاز",cta_books:"الكتب التفاعلية",
   st_books:"كتب تفاعلية",st_units:"وحدات (أولى ثانوي)",st_lessons:"درسًا (أولى ثانوي)",
   about_p:"مهندسة بالتدريب، ومعلمة حاسب آلي بالشغف. أدرّس التقنية الرقمية والروبوتات، وبطبّق عقلية الهندسة في الفصل: أفكّك الفكرة المعقدة لخطوات بسيطة، وأبني لها نموذجًا تفاعليًا تجرّبه الطالبة بنفسها، وأقيس أثر التعلّم.",
   vault_t:{all:"الكل",cert:"شهادات",course:"دورات",initiative:"مبادرات",project:"مشاريع",honor:"تكريمات"},
@@ -80,7 +80,7 @@ document.addEventListener('mouseout',e=>{if(e.target.classList&&e.target.classLi
 // flip
 const fl=document.getElementById('flip');fl.onclick=()=>fl.classList.toggle('on');fl.onkeydown=e=>{if(e.key==='Enter'||e.key===' ')fl.classList.toggle('on')};
 // terminal
-const TERM={ar:{help:"الأوامر: about, books, portfolio, contact",about:"لمياء توفيق: مهندسة ومعلمة حاسب آلي وروبوتات، تدرّس التقنية الرقمية للمرحلة الثانوية.",books:"كتابان تفاعليان: التقنية الرقمية ١-١ و ٣ (روابط في قسم أعمالي).",portfolio:"ملف الإنجاز بيكبر مع الوقت: شهادات، دورات، مبادرات، تكريمات.",contact:"البريد: "},
+const TERM={ar:{help:"الأوامر: about, books, portfolio, contact",about:"لمياء توفيق: مهندسة ومعلمة حاسب آلي وروبوتات، تدرّس التقنية الرقمية للمرحلة الثانوية.",books:"كتابان تفاعليان: التقنية الرقمية ١-١ و ٣ (روابط في قسم أعمالي).",portfolio:"ملف إنجاز بيكبر مع الوقت: شهادات، دورات، مبادرات، تكريمات.",contact:"البريد: "},
  en:{help:"commands: about, books, portfolio, contact",about:"Lamiaa Tawfeek: engineer and computer teacher, teaching Digital Technology to secondary students.",books:"Two interactive books: Digital Technology 1-1 and 3 (links in the Work section).",portfolio:"The portfolio keeps growing: certificates, courses, initiatives, honors.",contact:"Email: "}};
 function term(cmd){const o=document.getElementById('tout');const r=TERM[lang][cmd]+(cmd==='contact'?S.contact.email:'');const rr=lang==='ar'?r.replace(/([A-Za-z][A-Za-z0-9@._, \-]*[A-Za-z0-9])/g,'<bdi dir="ltr">$1</bdi>'):r;o.innerHTML+=`<b dir="ltr">$ ${cmd}</b>\n<span dir="${lang==='ar'?'rtl':'ltr'}" style="display:block">${rr}</span>\n\n`;o.scrollTop=o.scrollHeight}
 function termInit(){document.getElementById('tout').innerHTML='';term('help');document.getElementById('tcmds').innerHTML=['about','books','portfolio','contact'].map(c=>`<button type="button" data-cmd="${c}">${c}</button>`).join('')}
