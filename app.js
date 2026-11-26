@@ -1,14 +1,14 @@
 const S=window.SITE;
 const T={
  ar:{nav_about:"من أنا",nav_books:"أعمالي التفاعلية",nav_vault:"ملف إنجاز",nav_skills:"المهارات",nav_contact:"تواصل",
-  hero_tag:"// ملف إنجاز",cta_vault:"ملف إنجاز",cta_books:"الكتب التفاعلية",
+  hero_tag:"// ملف إنجاز",tick:"م/ لمياء توفيق … مدارس الزهراء الأهلية ( مكة المكرمة )",cta_vault:"ملف إنجاز",cta_books:"الكتب التفاعلية",
   st_books:"كتب تفاعلية",st_units:"وحدات (أولى ثانوي)",st_lessons:"درسًا (أولى ثانوي)",
   about_p:"مهندسة بالتدريب، ومعلمة حاسب آلي بالشغف. أدرّس التقنية الرقمية والروبوتات، وبطبّق عقلية الهندسة في الفصل: أفكّك الفكرة المعقدة لخطوات بسيطة، وأبني لها نموذجًا تفاعليًا تجرّبه الطالبة بنفسها، وأقيس أثر التعلّم.",
   vault_t:{all:"الكل",cert:"شهادات",course:"دورات",initiative:"مبادرات",project:"مشاريع",honor:"تكريمات"},
   open:"فتح",view:"عرض الملف",soon:"قريبًا",mail:"راسليني",pdf:"PDF",ppt:"تحميل العرض PowerPoint ⬇",
   skills:["الروبوتات","التقنية الرقمية","تصميم محتوى تفاعلي","التفكير الهندسي","حل المشكلات","الذكاء الاصطناعي في التعليم","الفيديو التعليمي","أوراق عمل تفاعلية","التعلّم النشط"]},
  en:{nav_about:"About",nav_books:"Interactive Work",nav_vault:"Portfolio",nav_skills:"Skills",nav_contact:"Contact",
-  hero_tag:"// teacher achievement portfolio",cta_vault:"View the portfolio",cta_books:"Interactive books",
+  hero_tag:"// teacher achievement portfolio",tick:"Eng. Lamiaa Tawfeek … Al-Zahraa Private Schools ( Makkah Al-Mukarramah )",cta_vault:"View the portfolio",cta_books:"Interactive books",
   st_books:"interactive books",st_units:"units (Grade 10)",st_lessons:"lessons (Grade 10)",
   about_p:"An engineer by training and a computer teacher by passion. I teach Digital Technology and robotics and bring an engineer's mindset to class: break a complex idea into simple steps, build an interactive model students can try themselves, and measure the learning.",
   vault_t:{all:"All",cert:"Certificates",course:"Courses",initiative:"Initiatives",project:"Projects",honor:"Honors"},

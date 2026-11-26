@@ -206,3 +206,55 @@ background-size:400px 100%;animation:flow 9s linear infinite;mask-image:linear-g
 /* no logo: centered header buttons */
 @media(max-width:560px){.nav{justify-content:center;column-gap:10px}.nav #pdf{order:1}.nav #lang{order:2}}
 .bn{display:inline-flex!important;direction:ltr}.bn i{font-style:normal}
+
+/* header: small buttons on the left + moving ticker */
+.nav{direction:ltr;flex-wrap:wrap;justify-content:flex-start;row-gap:6px}
+.nav #pdf{order:1}.nav #lang{order:2}
+.nav .tick{order:3;flex:1 1 0;min-width:0;overflow:hidden;white-space:nowrap;height:28px;line-height:28px;border-radius:8px;background:linear-gradient(90deg,#0a4dff55,#00000066);border:1px solid #5aa9ff66;position:relative}
+.nav .tick span{display:inline-block;padding-left:100%;font-size:13px;font-weight:800;color:#fff;direction:rtl;unicode-bidi:isolate;animation:tickmv 16s linear infinite;will-change:transform}
+html[lang=en] .nav .tick span{direction:ltr}
+@keyframes tickmv{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.nav nav{order:4;flex:0 0 100%;width:100%;justify-content:space-between;gap:4px;border-top:1px solid #ffffff22;padding-top:6px}
+html[dir=rtl] .nav nav{direction:rtl}
+.nav nav a{font-size:14px;flex:none}
+.nav #pdf,.nav #lang{height:28px;min-width:0;padding:0 10px;font-size:12px;border-radius:7px;border-width:1.5px}
+.nav #pdf{border:1.5px solid #fff}
+@media(max-width:560px){.nav{padding:8px 10px;column-gap:6px}.nav #pdf,.nav #lang{height:28px;min-width:0;padding:0 9px;font-size:12px}.nav nav{order:4;flex:0 0 100%}.nav nav a{font-size:13px}.nav .tick span{font-size:12.5px}}
+@media print{.nav .tick{display:none}}
+/* creative ticker */
+.nav .tick{height:34px;line-height:34px;background:linear-gradient(90deg,#001a66,#0a4dff66 50%,#000a2e);border:1.5px solid #6fb4ff;box-shadow:0 0 14px #1e78ff88,inset 0 0 12px #1e78ff55}
+.nav .tick::after{content:"";position:absolute;top:0;bottom:0;width:60px;left:-70px;background:linear-gradient(100deg,transparent,#9fd0ffaa,transparent);animation:tsweep 3.2s ease-in-out infinite;pointer-events:none}
+@keyframes tsweep{to{left:110%}}
+.nav .tick span{font-family:Cairo,'Tajawal',sans-serif;font-size:16px;font-weight:900;letter-spacing:0;
+  background:linear-gradient(90deg,#fff 0,#fff 30%,#7fc4ff 45%,#2f8cff 50%,#7fc4ff 55%,#fff 70%,#fff 100%);background-size:260px 100%;background-repeat:repeat-x;
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 6px #2f8cffcc);
+  animation:tickmv 16s linear infinite,tshine 2.4s linear infinite}
+@keyframes tshine{to{background-position:260px 0}}
+html[lang=en] .nav .tick span{font-family:'JetBrains Mono',Cairo,sans-serif;font-size:14px;letter-spacing:.5px}
+@media(max-width:560px){.nav .tick span{font-size:15px}html[lang=en] .nav .tick span{font-size:13px}}
+@media print{.nav .tick::after{display:none}}
+/* ticker a bit smaller */
+.nav .tick{height:28px;line-height:28px}
+.nav .tick span{font-size:13.5px}
+html[lang=en] .nav .tick span{font-size:11.5px;letter-spacing:.3px}
+@media(max-width:560px){.nav .tick span{font-size:13px}html[lang=en] .nav .tick span{font-size:11.5px}}
+
+/* small school logo in header */
+.nav .hlogo{order:0;display:flex;align-items:center;flex:none;height:34px}
+.nav .hlogo img{height:34px;width:auto;display:block;filter:drop-shadow(0 0 4px #fff8)}
+@media(max-width:560px){.nav .hlogo,.nav .hlogo img{height:32px}}
+@media print{.nav .hlogo{display:none}}
+/* header logo: gentle float + glow pulse */
+.nav .hlogo img{animation:hlfloat 3.2s ease-in-out infinite,hlglow 2.6s ease-in-out infinite}
+@keyframes hlfloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-3px) rotate(2deg)}}
+@keyframes hlglow{0%,100%{filter:drop-shadow(0 0 3px #fff6)}50%{filter:drop-shadow(0 0 9px #6fb4ff)}}
+@media(prefers-reduced-motion:reduce){.nav .hlogo img{animation:none}}
+/* header row a bit smaller still */
+.nav .tick{height:24px;line-height:24px}
+.nav .tick span{font-size:12px}
+html[lang=en] .nav .tick span{font-size:10.5px}
+.nav .hlogo,.nav .hlogo img{height:26px}
+.nav #pdf,.nav #lang{height:24px;padding:0 8px;font-size:11px}
+.nav{padding-top:6px;padding-bottom:6px}
+@media(max-width:560px){.nav{padding:6px 10px;column-gap:6px;row-gap:4px}.nav .tick{height:24px}.nav .tick span{font-size:12px}html[lang=en] .nav .tick span{font-size:10.5px}.nav .hlogo,.nav .hlogo img{height:26px}.nav #pdf,.nav #lang{height:24px;padding:0 8px;font-size:11px}.nav nav a{font-size:12.5px}.hero{padding-top:100px}}
