@@ -17,7 +17,7 @@ let ticking=false;
 function upd(){ticking=false;const vh=innerHeight,sy=scrollY;
  secs.forEach(s=>{const r=s.getBoundingClientRect();const c=(r.top+r.height/2-vh/2)/vh; // -1..1
   const rx=Math.max(-1,Math.min(1,c))*4; // section tilts in/out as it scrolls
-  s.style.transform=`rotateX(${rx}deg)`});
+  s.style.transform=innerWidth>820?`rotateX(${rx}deg)`:'none'});
  fls.forEach(f=>{const s=f.parentElement;const r=s.getBoundingClientRect();const c=(r.top+r.height/2-vh/2);
   f.style.transform=`translate3d(0,${c*parseFloat(f.dataset.sp)}px,0px) rotateY(${sy*.2}deg)`});
  document.querySelectorAll('.hero .scene').forEach(e=>{});
@@ -31,7 +31,7 @@ addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(u
 document.querySelectorAll('.reveal').forEach((e,i)=>e.style.setProperty('--ry',(i%2?-22:22)+'deg'));
 // hero parallax layers
 const hero=document.querySelector('.hero');
-if(hero)addEventListener('scroll',()=>{const y=Math.min(scrollY,900);hero.querySelectorAll('.hero-txt,.scene').forEach((e,i)=>{if(e.tagName==='CANVAS')return;e.style.translate=`0 ${y*(.12+i*.07)}px`})},{passive:true});
+if(hero)addEventListener('scroll',()=>{const y=Math.min(scrollY,900);hero.querySelectorAll('.scene').forEach(e=>{if(e.tagName==='CANVAS')return;e.style.translate=innerWidth>820?`0 ${y*.1}px`:'none'})},{passive:true});
 })();
 (function(){const sc=document.querySelector('.scene');if(!sc)return;let last=0;addEventListener('mousemove',()=>last=performance.now());
  function f(t){if(t-last>2500){sc.style.transform=`rotateY(${Math.sin(t/1400)*26}deg) rotateX(${Math.cos(t/1900)*10}deg)`}requestAnimationFrame(f)}requestAnimationFrame(f)})();

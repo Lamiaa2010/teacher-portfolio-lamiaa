@@ -1,7 +1,7 @@
 const S=window.SITE;
 const T={
  ar:{nav_about:"من أنا",nav_books:"أعمالي التفاعلية",nav_vault:"ملف الإنجاز",nav_skills:"المهارات",nav_contact:"تواصل",
-  hero_tag:"// ملف إنجاز معلمة",cta_vault:"شوفي ملف الإنجاز",cta_books:"الكتب التفاعلية",
+  hero_tag:"// ملف إنجاز",cta_vault:"شوفي ملف الإنجاز",cta_books:"الكتب التفاعلية",
   st_books:"كتب تفاعلية",st_units:"وحدات (أولى ثانوي)",st_lessons:"درسًا (أولى ثانوي)",
   about_p:"مهندسة بالتدريب، ومعلمة حاسب آلي بالشغف. أدرّس التقنية الرقمية والروبوتات، وبطبّق عقلية الهندسة في الفصل: أفكّك الفكرة المعقدة لخطوات بسيطة، وأبني لها نموذجًا تفاعليًا تجرّبه الطالبة بنفسها، وأقيس أثر التعلّم.",
   vault_t:{all:"الكل",cert:"شهادات",course:"دورات",initiative:"مبادرات",project:"مشاريع",honor:"تكريمات"},
@@ -25,7 +25,7 @@ function buildRing(){const r=document.getElementById('ring');const n=S.standards
  document.getElementById('triple').innerHTML=[['plan','إعداد وتنفيذ خطة التعلم','بعض الشواهد'],['results','تحليل نتائج المتعلمين','للمزيد'],['assess','تنوع أساليب التقويم','صفية ولاصفية: الاختبارات (ورقي وإلكتروني) · التطبيق العملي · المهام الأدائية · المشاريع']].map(([k,t,s])=>`<div class="t3" data-std="${k}"><h4>${t}</h4><p>${s}</p>${DLINK(k)}</div>`).join('')}
 function card(it,L){
   L=L||lang;const t=T[L],ph=it.placeholder;
-  const meta=`<div class="meta"><span>${it.term2?(L==='ar'?'الفصل الثاني':'Term 2'):it.book?t.vault_t.project:STD_NAME(it.std)}</span>${ph?`<span class="badge">${t.soon}</span>`:`<span class="mono">${it.date||''}</span>`}</div>`;
+  const meta=`<div class="meta"><span>${it.book?t.vault_t.project:STD_NAME(it.std)}</span>${ph?`<span class="badge">${t.soon}</span>`:`<span class="mono">${it.date||''}</span>`}</div>`;
   let act='';
   if(it.link) act=`<a class="open" href="${it.link}" target="_blank" rel="noopener">${t.open} ↗</a>`;
   else if(it.file) act=`<button class="open" type="button" data-file="${it.file}">${t.view}</button>`;
@@ -42,10 +42,10 @@ function render(){
   $('#filters').innerHTML=vaultFilters();
   $('#vaultGrid').innerHTML=vaultCards();buildRing();
   $('#chips').innerHTML=t.skills.map(s=>`<span>${s}</span>`).join('');
-  const m=$('#mail');m.href='mailto:'+S.contact.email;m.textContent=t.mail+' · '+S.contact.email;m.style.direction='ltr';
+  const m=$('#mail');m.href='mailto:'+S.contact.email;m.innerHTML=`<span class="ml">${t.mail}</span><span class="me" dir="ltr">${S.contact.email}</span>`;
   observe();
 }
-function observe(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.reveal').forEach(e=>io.observe(e))}
+function observe(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0,rootMargin:'0px 0px -5% 0px'});document.querySelectorAll('.reveal').forEach(e=>io.observe(e))}
 document.addEventListener('click',e=>{
   const f=e.target.closest('[data-f]');if(f){filter=f.dataset.f;render();}
   const b=e.target.closest('[data-file]');if(b){const p='files/'+b.dataset.file;$('#lbbody').innerHTML=/\.pdf$/i.test(p)?`<iframe src="${p}"></iframe>`:`<img src="${p}" alt="">`;$('#lightbox').hidden=false;}
@@ -82,14 +82,14 @@ const fl=document.getElementById('flip');fl.onclick=()=>fl.classList.toggle('on'
 // terminal
 const TERM={ar:{help:"الأوامر: about, books, portfolio, contact",about:"لمياء توفيق: مهندسة ومعلمة حاسب آلي وروبوتات، تدرّس التقنية الرقمية للمرحلة الثانوية.",books:"كتابان تفاعليان: التقنية الرقمية ١-١ و ٣ (روابط في قسم أعمالي).",portfolio:"ملف الإنجاز بيكبر مع الوقت: شهادات، دورات، مبادرات، تكريمات.",contact:"البريد: "},
  en:{help:"commands: about, books, portfolio, contact",about:"Lamiaa Tawfeek: engineer and computer teacher, teaching Digital Technology to secondary students.",books:"Two interactive books: Digital Technology 1-1 and 3 (links in the Work section).",portfolio:"The portfolio keeps growing: certificates, courses, initiatives, honors.",contact:"Email: "}};
-function term(cmd){const o=document.getElementById('tout');const r=TERM[lang][cmd]+(cmd==='contact'?S.contact.email:'');o.innerHTML+=`<b>$ ${cmd}</b>\n${r}\n\n`;o.scrollTop=o.scrollHeight}
+function term(cmd){const o=document.getElementById('tout');const r=TERM[lang][cmd]+(cmd==='contact'?S.contact.email:'');const rr=lang==='ar'?r.replace(/([A-Za-z][A-Za-z0-9@._, \-]*[A-Za-z0-9])/g,'<bdi dir="ltr">$1</bdi>'):r;o.innerHTML+=`<b dir="ltr">$ ${cmd}</b>\n<span dir="${lang==='ar'?'rtl':'ltr'}" style="display:block">${rr}</span>\n\n`;o.scrollTop=o.scrollHeight}
 function termInit(){document.getElementById('tout').innerHTML='';term('help');document.getElementById('tcmds').innerHTML=['about','books','portfolio','contact'].map(c=>`<button type="button" data-cmd="${c}">${c}</button>`).join('')}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-cmd]');if(b)term(b.dataset.cmd)});
 // marquee + flip text
 const MQ={ar:["مهندسة","معلمة","روبوتات","تقنية رقمية","ENGINEER","TEACHER","ROBOTICS"],en:["ENGINEER","TEACHER","ROBOTICS","DIGITAL TECH","مهندسة","معلمة","روبوتات"]};
-const FL={ar:{e:["أحلّل المشكلة","أبني نموذجًا","أختبر وأحسّن"],t:["أبسّط الفكرة","أخلّي الطالبة تجرّب","أقيس الفهم وأُلهم"],h:"اضغطي للقلب ⟲"},en:{e:["Analyse the problem","Build a model","Test and improve"],t:["Simplify the idea","Let her try it","Measure and inspire"],h:"tap to flip ⟲"}};
+const FL={ar:{e:["أحلّل المشكلة","أبني نموذجًا","أختبر وأحسّن"],t:["أبسّط الفكرة","أجعل الطالبة تجرّب","أقيس الفهم وأُلهم"],h:"اضغطي للإكمال ⟲",l:["مهندسة","معلمة"]},en:{e:["Analyse the problem","Build a model","Test and improve"],t:["Simplify the idea","Let her try it","Measure and inspire"],h:"tap to continue ⟲",l:["ENGINEER","TEACHER"]}};
 function extra(){const m=MQ[lang].map(s=>`<span>${s}</span><span>✦</span>`).join('');document.getElementById('mq').innerHTML=m+m;
- document.getElementById('engSteps').innerHTML=FL[lang].e.map(s=>`<li>${s}</li>`).join('');document.getElementById('tchSteps').innerHTML=FL[lang].t.map(s=>`<li>${s}</li>`).join('');document.getElementById('flipHint').textContent=FL[lang].h;termInit()}
+ document.getElementById('engSteps').innerHTML=FL[lang].e.map(s=>`<li>${s}</li>`).join('');document.getElementById('tchSteps').innerHTML=FL[lang].t.map(s=>`<li>${s}</li>`).join('');document.querySelectorAll('.hintS').forEach(x=>x.textContent=FL[lang].h);document.getElementById('lblE').textContent=FL[lang].l[0];document.getElementById('lblT').textContent=FL[lang].l[1];termInit()}
 const _r=render;render=function(){_r();extra()};
 render();typeLine();counters();
 if(location.hash==='#shot'||location.hash==='#print'){document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'));if(location.hash==='#shot'){document.head.insertAdjacentHTML('beforeend','<style>.reveal{transition:none!important}</style>')}if(location.hash==='#shot')document.querySelector('.hero').style.minHeight='760px'}

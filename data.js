@@ -26,8 +26,8 @@ window.SITE = {
   items: [
     { id: 1, std: "8", date: "2026-11",
       title: { ar: "كتاب التقنية الرقمية ١-١ التفاعلي (أولى ثانوي)", en: "Interactive Digital Technology 1-1 (Grade 10)" },
-      desc: { ar: "كتاب تفاعلي كامل: ١٧ درسًا في ٤ وحدات، مع رسوم متحركة وفيديو ملخص وورقة عمل تفاعلية لكل درس.",
-              en: "A complete interactive book: 17 lessons in 4 units, with animation, a summary video and an interactive worksheet for every lesson." },
+      desc: { ar: "كتاب تفاعلي لمنهج أولى ثانوي يتضمن ١٧ درسًا في ٤ وحدات، بنفس أسلوب التفاعل والفيديو وأوراق العمل.",
+              en: "An interactive book for the Grade 10 course, with 17 lessons in 4 units, and the same animation, video and worksheets." },
       link: "https://lamiaa2010.github.io/alzahraa-digital-tech-g10/", book: true },
     { id: 2, std: "8", date: "2026-11",
       title: { ar: "كتاب التقنية الرقمية ٣ التفاعلي (ثالث ثانوي)", en: "Interactive Digital Technology 3 (Grade 12)" },
@@ -35,10 +35,10 @@ window.SITE = {
               en: "An interactive book for the Grade 12 course, including the AI section, with the same animation, video and worksheets." },
       link: "https://lamiaa2010.github.io/alzahraa-digital-tech-g10/".replace("g10","g12"), book: true },
     { id: 3, std: "t2", term2: true, placeholder: true, book: true,
-      title: { ar: "تقنية رقمية <span dir='ltr'>١-٢</span> (أولى ثانوي) التفاعلي", en: "Interactive Digital Technology 1-2 (Grade 10)" },
-      desc: { ar: "الكتاب التفاعلي للفصل الدراسي الثاني (أولى ثانوي). قريبًا بإذن الله.", en: "The interactive book for the second term (Grade 10). Coming soon." } },
+      title: { ar: "كتاب التقنية الرقمية <span dir='ltr'>١-٢</span> التفاعلي (أولى ثانوي)", en: "Interactive Digital Technology 1-2 (Grade 10)" },
+      desc: { ar: "كتاب تفاعلي لمنهج أولى ثانوي للفصل الدراسي الثاني، بنفس أسلوب التفاعل والفيديو وأوراق العمل. قريبًا بإذن الله.", en: "An interactive book for the Grade 10 course, second term, with the same animation, video and worksheets. Coming soon." } },
     { id: 4, std: "t2", term2: true, placeholder: true, book: true,
-      title: { ar: "تقنية رقمية <span dir='ltr'>٢-٢</span> (ثانية ثانوي) التفاعلي", en: "Interactive Digital Technology 2-2 (Grade 11)" },
-      desc: { ar: "الكتاب التفاعلي للفصل الدراسي الثاني (ثانية ثانوي). قريبًا بإذن الله، وهيتضاف رابطه هنا لما يتنشر.", en: "The interactive book for the second term (Grade 11). Coming soon; its link will be added here when published." } }
+      title: { ar: "كتاب التقنية الرقمية <span dir='ltr'>٢-٢</span> التفاعلي (ثانية ثانوي)", en: "Interactive Digital Technology 2-2 (Grade 11)" },
+      desc: { ar: "كتاب تفاعلي لمنهج ثانية ثانوي للفصل الدراسي الثاني، بنفس أسلوب التفاعل والفيديو وأوراق العمل. قريبًا بإذن الله.", en: "An interactive book for the Grade 11 course, second term, with the same animation, video and worksheets. Coming soon." } }
   ]
 };
